@@ -29,11 +29,19 @@ require_once 'header.php';
 
 <?php
 require_once('footer.php');
-require_once ('repository/database.php');
-require_once ('functions.php');
-$db = new DATABASE();
-$print = $db->get_results('SELECT `name`, `last_name`, `email` FROM `users` WHERE `id` = 1')->fetch_assoc();
-debug_to_text_file($print, '');
+
+//require_once ('repository/database.php');
+//require_once ('functions.php');
+//$db = new DATABASE();
+//$db->query('INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `phone`, `password`)
+//                            VALUES ("", "Василий", "Пупкин", "vasya@mail.ru", "6556787654", "87667")');
+//$db->query('INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `phone`, `password`)
+//                            VALUES ("", "Егор", "Охотин", "egor@mail.ru", "876789087", "123455432")');
+//$print = $db->query('SELECT * FROM `users` WHERE `id` = 3')->fetch_assoc();
+//debug_to_text_file($print, '');
+//$print = $db->query('SELECT * FROM `users` WHERE `id` = 1')->fetch_assoc();
+//debug_to_text_file($print, '');
+
 ?>
 
 </body>
