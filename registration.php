@@ -9,7 +9,7 @@ require_once 'head-tags.php';
 <body>
 
 <?php
-$href = '/insta/index.php';
+$href_btn = '/insta/index.php';
 $nameButton = 'Авторизоваться';
 require_once 'header.php';
 ?>
@@ -18,7 +18,7 @@ require_once 'header.php';
 
     <div class="registration">
         <div class="registration__form">
-            <div class="form-signin registration__form">
+            <form class="form-signin registration__form" action="profile.php">
                 <h1 class="h3 mb-3 font-weight-normal registration__form_title">Панель регистрации</h1>
                 <div class="registration__form_input col-sm-12">
                     <label for="inputName" class="sr-only registration__form_input-wrapper">Name</label>
@@ -48,11 +48,11 @@ require_once 'header.php';
                            placeholder="Подтверждение пароля" required="">
                 </div>
                 <div class="registration__form_buttons">
-                    <button class="btn btn-lg btn-primary btn-block registration__form_button-link">
+                    <button class="btn btn-lg btn-primary btn-block registration__form_button-link" type="submit">
                         Зарегистрироваться
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="message">

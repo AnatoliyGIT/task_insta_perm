@@ -9,7 +9,7 @@ require_once 'head-tags.php';
 <body>
 
 <?php
-$href = '/insta/registration.php';
+$href_btn = '/insta/registration.php';
 $nameButton = 'Зарегистрироваться';
 require_once 'header.php';
 ?>
@@ -18,7 +18,7 @@ require_once 'header.php';
 
     <div class="registration">
         <div class="registration__form">
-            <form class="form-signin registration__form">
+            <form class="form-signin registration__form" action="profile.php">
                 <h1 class="h3 mb-3 font-weight-normal registration__form_title">Панель авторизации</h1>
                 <div class="registration__form_input col-sm-12">
                     <label for="inputEmail" class="sr-only registration__form_input-wrapper">Email address</label>
