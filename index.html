@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+    <script async src="https://kit.fontawesome.com/6a3db4aac8.js" crossorigin="anonymous"></script>
+    <script defer src="js/registration.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="message">
+        <h5 class="message__text"></h5>
+    </div>
+
+    <div class="registration">
+        <div class="registration__form">
+
+            <H1 class="registration__form_title">Панель регистрации</H1>
+
+            <div class="registration__form_input col-sm-12" data-validate="Enter email">
+                <span class="registration__form_input-label-left col-sm-4">Эл. почта:</span>
+                <label class="registration__form_input-wrapper col-sm-7">
+                    <input class="registration__form_input-value-email" type="email">
+                </label>
+                <span class="registration__form_input-label-right_email col-sm-1">
+                        <a class="registration__form_input-prompt-link_email"></a>
+                        <i class="registration__form_input-prompt-icon_email far fa-question-circle"></i>
+                </span>
+            </div>
+
+            <div class="registration__form_input col-sm-12" data-validate="Enter password">
+                <span class="registration__form_input-label-left col-sm-4">Пароль:</span>
+                <label class="registration__form_input-wrapper col-sm-7">
+                    <input class="registration__form_input-value-password-one" type="password">
+                </label>
+                <span class="registration__form_input-label-right_password-one col-sm-1">
+                        <a class="registration__form_input-prompt-link_password-one"></a>
+                        <i class="registration__form_input-prompt-icon_password-one far fa-question-circle"></i>
+                </span>
+            </div>
+
+            <div class="registration__form_input col-sm-12" data-validate="Enter password">
+                <span class="registration__form_input-label-left col-sm-4">Подтверждение пароля:</span>
+                <label class="registration__form_input-wrapper col-sm-7">
+                    <input class="registration__form_input-value-password-two" type="password">
+                </label>
+                <span class="registration__form_input-label-right_password-two col-sm-1">
+                        <a class="registration__form_input-prompt-link_password-two"></a>
+                        <i class="registration__form_input-prompt-icon_password-two far fa-question-circle"></i>
+                </span>
+            </div>
+
+            <div class="registration__form_buttons col-sm-12">
+                <div class="registration__form_button">
+                    <a class="registration__form_button-link">Зарегистрироваться</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

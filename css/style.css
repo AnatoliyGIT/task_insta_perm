@@ -1,10 +1,29 @@
 html,
 body {
     height: 100%;
+    font-family: 'Marmelad', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.registration {
+    width: 500px;
 }
 
 body {
     background-color: #f5f5f5;
+}
+
+.row_menu {
+    position: fixed;
+    z-index: 10;
+    width: -webkit-fill-available;
+}
+
+.row_menu-opacity {
+    opacity: 1;
 }
 
 .form-signin {
@@ -40,19 +59,165 @@ body {
     border-bottom-right-radius: 0;
 }
 
-#inputLastName {
+#inputLastName, #inputPassword1 {
     margin-bottom: -1px;
     border-radius: 0;
 }
 
-.form-signin input[type="email"] {
+#inputEmail {
     margin-bottom: -1px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.form-signin input[type="password"] {
+#inputPassword, #inputPassword2 {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+
+.registration__form {
+    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.registration__form_input {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration__form_input-value-email,
+.registration__form_input-value-name,
+.registration__form_input-value-lastName,
+.registration__form_input-value-password-one,
+.registration__form_input-value-password-two {
+    width: 95%;
+    height: 45px;
+    font-family: Ubuntu-Regular, sans-serif;
+    font-size: 1rem;
+    color: dimgray;
+    display: flex;
+}
+
+.registration__form_buttons {
+    margin: 20px 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.registration__form_button {
+    width: auto;
+}
+
+.registration__form_button-link {
+    background: #30caa0;
+    cursor: pointer;
+    font-family: 'Marmelad', sans-serif;
+    font-size: 16px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+}
+
+.registration__form_button-link:hover {
+    color: #fff;
+    background-color: dimgray;
+}
+
+.border_red {
+    border: 3px solid #ed4a34;
+    border-radius: 5px;
+}
+
+.registration__form_title {
+    padding: 10px;
+    font-size: 28px;
+    color: dimgray;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-family: 'Marmelad', sans-serif;
+}
+
+.visible {
+    display: flex;
+    padding: 10px;
+    max-width: 50%;
+    background-color: #ccffcc;
+    border: 2px solid dimgray;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.error {
+    top: 0;
+    max-width: 30%;
+    background-color: #fcd8cc;
+}
+
+.message {
+    display: none;
+}
+
+.message__text {
+    padding: 0 20px;
+    color: #ed4a34;
+    font-family: 'Marmelad', sans-serif;
+    text-align: center;
+}
+
+.finished {
+    padding: 10px;
+    color: dimgray;
+    width: 500px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Marmelad', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.container {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: burlywood;
+    position: relative;
+    z-index: 1;
+}
+
+.registration {
+    width: 500px;
+}
+
+.error {
+    position: absolute;
+    max-width: 30%;
+    background-color: #fcd8cc;
+}
+
+.visible {
+    visibility: visible !important;
 }

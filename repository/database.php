@@ -9,8 +9,7 @@ class DATABASE
 
     public function query($query)
     {
-        $link = mysqli_connect($this->host, $this->user, $this->password, $this->database)
-        or die("Ошибка подключения" . mysqli_error($link));
+        $link = mysqli_connect($this->host, $this->user, $this->password, $this->database);
         $res = mysqli_query($link, $query);
         mysqli_close($link);
         return $res;
