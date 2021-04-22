@@ -4,7 +4,7 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">ООО "Инста"</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="contacts.php">Контакты</a>
-            <a class="p-2 text-dark" href="page-main.php">О нас</a>
+            <a class="p-2 text-dark" href="general.php">Общее</a>
         </nav>
         <a class="btn btn-outline-primary" href="<?=$href_btn?>"><?=$nameButton?></a>
     </div>
