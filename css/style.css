@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 
-.registration {
+.registration, .authorization {
     width: 500px;
 }
 
@@ -77,7 +77,7 @@ body {
 }
 
 
-.registration__form {
+.registration__form, .authorization__form {
     max-width: 80vw;
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +86,7 @@ body {
     border-radius: 5px;
 }
 
-.registration__form_input {
+.registration__form_input, .authorization__form_input {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -94,8 +94,10 @@ body {
 }
 
 .registration__form_input-value-email,
+.authorization__form_input-value-email,
 .registration__form_input-value-name,
 .registration__form_input-value-lastName,
+.authorization__form_input-value-password,
 .registration__form_input-value-password-one,
 .registration__form_input-value-password-two {
     width: 95%;
@@ -106,17 +108,17 @@ body {
     display: flex;
 }
 
-.registration__form_buttons {
+.registration__form_buttons, .authorization__form_buttons {
     margin: 20px 2px;
     display: flex;
     justify-content: center;
 }
 
-.registration__form_button {
+.registration__form_button, .authorization__form_button {
     width: auto;
 }
 
-.registration__form_button-link {
+.registration__form_button-link, .authorization__form_button-link {
     background: #30caa0;
     cursor: pointer;
     font-family: 'Marmelad', sans-serif;
@@ -129,7 +131,7 @@ body {
     color: #fff;
 }
 
-.registration__form_button-link:hover {
+.registration__form_button-link:hover, .authorization__form_button-link:hover {
     color: #fff;
     background-color: dimgray;
 }
@@ -139,7 +141,7 @@ body {
     border-radius: 5px;
 }
 
-.registration__form_title {
+.registration__form_title, .authorization__form_title {
     padding: 10px;
     font-size: 28px;
     color: dimgray;
@@ -206,10 +208,6 @@ body {
     background-color: burlywood;
     position: relative;
     z-index: 1;
-}
-
-.registration {
-    width: 500px;
 }
 
 .error {
