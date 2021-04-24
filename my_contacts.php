@@ -10,6 +10,8 @@ require_once 'head-tags.php';
 
 <?php
 $href_btn = '/insta/index.php';
+$nameMenuOne = 'Все контакты';
+$hrefMenuOne = 'all_contacts.php';
 $nameButton = 'Выйти из профиля';
 require_once 'header.php';
 ?>

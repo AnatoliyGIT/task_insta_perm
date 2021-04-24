@@ -223,3 +223,12 @@ body {
 .visible {
     visibility: visible !important;
 }
+
+.profile {
+    position: absolute;
+    top: 6rem;
+}
+
+.text-dark {
+    font-size: large;
+}

@@ -40,7 +40,7 @@ require_once 'header.php';
                 $name = $_POST['name'];
                 $lastName = $_POST['last_name'];
                 mysqli_query($link, "INSERT INTO users SET email='" . $email . "', password='" . $password . "', name='" . $name . "', lastName='" . $lastName . "'");
-                header('Location: profile.php');
+                header('Location: profile.php?name='.$name);
                 exit();
             } else {
                 print '<h6 class="error_text">При регистрации произошли следующие ошибки:</h6>';
