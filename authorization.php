@@ -16,31 +16,67 @@ require_once 'header.php';
 
 <div class="main text-center container">
 
-    <div class="registration">
-        <div class="registration__form">
-            <form class="form-signin registration__form" action="profile.php">
+    <div class="authorization">
+
+        <?php
+        function generateCode($length = 6)
+        {
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789";
+            $code = "";
+            $clen = strlen($chars) - 1;
+            while (strlen($code) < $length) {
+                $code .= $chars[mt_rand(0, $clen)];
+            }
+            return $code;
+        }
+
+        // Connect to database
+        $link = mysqli_connect("localhost", "root", "", "insta");
+
+        if (isset($_POST['submit'])) {
+            $query = mysqli_query($link, "SELECT id, password FROM users WHERE email='" .
+                mysqli_real_escape_string($link, $_POST['email']) . "' LIMIT 1");
+            $data = mysqli_fetch_assoc($query);
+            if ($data) {
+                if ($data['password'] === md5(md5($_POST['password']))) {
+                    $hash = md5(generateCode(10));
+                    mysqli_query($link, "UPDATE users SET hash='" . $hash . "' WHERE id='" . $data['id'] . "'");
+
+                    // cookies
+                    setcookie("id", $data['id'], time() + 60 * 60 * 24 * 30, "/");
+                    setcookie("hash", $hash, time() + 60 * 60 * 24 * 30, "/", null, null, true);
+                    header('Location: check.php');
+                    exit();
+                } else {
+                    print '<h6 class="error_text">Вы ввели неправильный email/пароль</h6>';
+                }
+            } else {
+                print '<h6 class="error_text">Вы ввели неправильный email/пароль</h6>';
+            }
+        }
+        ?>
+
+        <div class="authorization__form">
+            <form class="form-signin authorization__form" method="POST" action="authorization.php">
                 <h1 class="h3 mb-3 font-weight-normal registration__form_title">Панель авторизации</h1>
-                <div class="registration__form_input col-sm-12">
+                <div class="authorization__form_input col-sm-12">
                     <label for="inputEmail" class="sr-only registration__form_input-wrapper">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control registration__form_input-value-email"
-                           style="border-radius: 0" placeholder="Емайл" required="">
+                    <input name="email" type="email" id="inputEmail" class="form-control registration__form_input-value-email"
+                           placeholder="Емайл" required="">
                 </div>
-                <div class="registration__form_input col-sm-12">
-                    <label for="inputPassword" class="sr-only registration__form_input-wrapper">Password</label>
-                    <input type="password" id="inputPassword2"
-                           class="form-control registration__form_input-value-password-two"
+                <div class="authorization__form_input col-sm-12">
+                    <label for="inputPassword" class="sr-only authorization__form_input-wrapper">Password</label>
+                    <input name="password" type="password" id="inputPassword"
+                           class="form-control authorization__form_input-value-password"
                            placeholder="Пароль" required="">
                 </div>
-                <div class="registration__form_buttons">
-                    <button class="btn btn-lg btn-primary btn-block registration__form_button-link" type="submit">
+                <div class="authorization__form_buttons">
+                    <button name="submit" class="btn btn-lg btn-primary btn-block authorization__form_button-link" type="submit">
                         Войти
                     </button>
                 </div>
             </form>
         </div>
-    </div>
-    <div class="message">
-        <h5 class="message__text"></h5>
     </div>
 </div>
 

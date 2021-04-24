@@ -22,6 +22,10 @@ body {
     width: -webkit-fill-available;
 }
 
+.error_text {
+    margin-bottom: 1rem;
+}
+
 .row_menu-opacity {
     opacity: 1;
 }
