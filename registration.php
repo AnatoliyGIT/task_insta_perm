@@ -41,7 +41,8 @@ require_once 'header.php';
                 $lastName = $_POST['last_name'];
                 $phone = $_POST['phone'];
                 mysqli_query($link, "INSERT INTO users SET email='" . $email . "', password='" . $password . "', name='" . $name . "', lastName='" . $lastName . "', phone='" . $phone . "'");
-                header('Location: profile.php?name='.$name);
+                mysqli_query($link, "INSERT INTO contacts SET name='" . $name . "', lastName='" . $lastName . "', phone='" . $phone . "'");
+                header('Location: index.php');
                 exit();
             } else {
                 foreach ($errors as $key => $error) {
