@@ -62,7 +62,7 @@ require_once 'header.php';
                 <div class="authorization__form_input col-sm-12">
                     <label for="inputEmail" class="sr-only registration__form_input-wrapper">Email address</label>
                     <input name="email" type="email" id="inputEmail" class="form-control registration__form_input-value-email"
-                           placeholder="Емайл" required="">
+                           placeholder="Емайл" required="" style="border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem;">
                 </div>
                 <div class="authorization__form_input col-sm-12">
                     <label for="inputPassword" class="sr-only authorization__form_input-wrapper">Password</label>

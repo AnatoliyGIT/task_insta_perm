@@ -39,11 +39,11 @@ require_once 'header.php';
                 $password = md5(md5(trim($_POST['password'])));
                 $name = $_POST['name'];
                 $lastName = $_POST['last_name'];
-                mysqli_query($link, "INSERT INTO users SET email='" . $email . "', password='" . $password . "', name='" . $name . "', lastName='" . $lastName . "'");
+                $phone = $_POST['phone'];
+                mysqli_query($link, "INSERT INTO users SET email='" . $email . "', password='" . $password . "', name='" . $name . "', lastName='" . $lastName . "', phone='" . $phone . "'");
                 header('Location: profile.php?name='.$name);
                 exit();
             } else {
-                print '<h6 class="error_text">При регистрации произошли следующие ошибки:</h6>';
                 foreach ($errors as $key => $error) {
                     print $key + 1 . '. ' . $error . "<br>";
                 }
@@ -65,6 +65,12 @@ require_once 'header.php';
                     <input name="last_name" type="text" id="inputLastName"
                            class="form-control registration__form_input-value-lastname"
                            placeholder="Фамилия" required="">
+                </div>
+                <div class="registration__form_input col-sm-12">
+                    <label for="inputPhone" class="sr-only registration__form_input-wrapper">Phone</label>
+                    <input name="phone" type="text" id="inputPhone"
+                           class="form-control registration__form_input-value-phone"
+                           placeholder="Телефон">
                 </div>
                 <div class="registration__form_input col-sm-12">
                     <label for="inputEmail" class="sr-only registration__form_input-wrapper">Email address</label>
