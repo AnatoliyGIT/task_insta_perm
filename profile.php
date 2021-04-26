@@ -27,17 +27,19 @@ require_once 'header.php';
             if (isset($_COOKIE['id']) and isset($_COOKIE['hash'])) {
                 $query = mysqli_query($link, "SELECT id, hash, email, name, lastName, phone FROM users WHERE id = '" . intval($_COOKIE['id']) . "' LIMIT 1");
                 $userdata = mysqli_fetch_assoc($query);
+                ?>
+                <p>
+                <h4 class="user"><?= $userdata['name'] . ' ' . $userdata['lastName'] ?></h4>
+                </p>
+                <p>
+                    Телефон: <h4 class="user"><?= $userdata['phone'] ?></h4>
+                </p>
+                <p>
+                    Электронная почта: <h4 class="user"><?= $userdata['email'] ?></h4>
+                </p>
+                <?php
             }
             ?>
-            <p>
-                <h4 class="user"><?=$userdata['name'] . ' ' . $userdata['lastName']?></h4>
-            </p>
-            <p>
-                Телефон: <h4 class="user"><?=$userdata['phone']?></h4>
-            </p>
-            <p>
-                Электронная почта: <h4 class="user"><?=$userdata['email']?></h4>
-            </p>
         </div>
     </div>
 </div>
